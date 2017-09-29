@@ -49,14 +49,24 @@
                                     <constraint firstItem="Tyr-w1-vZg" firstAttribute="centerY" secondItem="S57-Mw-1gc" secondAttribute="centerY" id="vl8-uA-S03"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAU-MD-GTQ">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0N3-VE-Qwo"/>
+                                    <constraint firstAttribute="height" constant="50" id="aOY-Ye-seB"/>
+                                </constraints>
+                                <state key="normal" image="locationButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gu5-fa-G7d" firstAttribute="top" secondItem="aAU-MD-GTQ" secondAttribute="bottom" constant="20" id="2CZ-28-XPu"/>
                             <constraint firstItem="DWs-2c-oOv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Bw-fp-10a"/>
                             <constraint firstItem="S57-Mw-1gc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BT4-jS-s2l"/>
                             <constraint firstAttribute="trailing" secondItem="S57-Mw-1gc" secondAttribute="trailing" id="Eru-28-Oxz"/>
                             <constraint firstAttribute="trailing" secondItem="DWs-2c-oOv" secondAttribute="trailing" id="Oml-Ap-uUM"/>
                             <constraint firstItem="S57-Mw-1gc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TuS-co-iF6"/>
+                            <constraint firstAttribute="trailing" secondItem="aAU-MD-GTQ" secondAttribute="trailing" constant="20" id="VZm-Fy-nZx"/>
                             <constraint firstItem="gu5-fa-G7d" firstAttribute="top" secondItem="DWs-2c-oOv" secondAttribute="bottom" id="dcz-NG-qlZ"/>
                             <constraint firstItem="DWs-2c-oOv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xaE-N9-RWJ"/>
                         </constraints>
@@ -67,4 +77,7 @@
             <point key="canvasLocation" x="117.5" y="117.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="locationButton" width="67" height="67"/>
+    </resources>
 </document>
