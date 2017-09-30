@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DWs-2c-oOv">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWs-2c-oOv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S57-Mw-1gc">
@@ -56,25 +56,40 @@
                                     <constraint firstAttribute="height" constant="50" id="aOY-Ye-seB"/>
                                 </constraints>
                                 <state key="normal" image="locationButton"/>
+                                <connections>
+                                    <action selector="centerMapBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1c6-gB-w74"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ck-rp-Eoj">
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gu5-fa-G7d" firstAttribute="top" secondItem="aAU-MD-GTQ" secondAttribute="bottom" constant="20" id="2CZ-28-XPu"/>
                             <constraint firstItem="DWs-2c-oOv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Bw-fp-10a"/>
+                            <constraint firstItem="DWs-2c-oOv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aey-DU-MW2"/>
                             <constraint firstItem="S57-Mw-1gc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BT4-jS-s2l"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ck-rp-Eoj" secondAttribute="bottom" id="DXn-R6-su0"/>
                             <constraint firstAttribute="trailing" secondItem="S57-Mw-1gc" secondAttribute="trailing" id="Eru-28-Oxz"/>
                             <constraint firstAttribute="trailing" secondItem="DWs-2c-oOv" secondAttribute="trailing" id="Oml-Ap-uUM"/>
                             <constraint firstItem="S57-Mw-1gc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TuS-co-iF6"/>
                             <constraint firstAttribute="trailing" secondItem="aAU-MD-GTQ" secondAttribute="trailing" constant="20" id="VZm-Fy-nZx"/>
-                            <constraint firstItem="gu5-fa-G7d" firstAttribute="top" secondItem="DWs-2c-oOv" secondAttribute="bottom" id="dcz-NG-qlZ"/>
+                            <constraint firstItem="3Ck-rp-Eoj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ePU-4a-lBw"/>
+                            <constraint firstItem="DWs-2c-oOv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nfq-jH-M9N"/>
+                            <constraint firstItem="3Ck-rp-Eoj" firstAttribute="top" secondItem="DWs-2c-oOv" secondAttribute="bottom" id="wvI-VY-O7d"/>
                             <constraint firstItem="DWs-2c-oOv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xaE-N9-RWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ck-rp-Eoj" secondAttribute="trailing" id="yhE-km-N9v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="DWs-2c-oOv" id="dmJ-7N-gyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.5" y="117.5"/>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
         </scene>
     </scenes>
     <resources>
