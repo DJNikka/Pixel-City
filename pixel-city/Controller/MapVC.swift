@@ -25,6 +25,7 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         locationManager.delegate = self
+        configureLocationServices()
     }
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
@@ -39,6 +40,12 @@ extension MapVC: MKMapViewDelegate {
 
 extension MapVC: CLLocationManagerDelegate {
     func configureLocationServices() {
+        if authorizationStatus == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+            
+        } else {
+            return
+        }
         
     }
     
