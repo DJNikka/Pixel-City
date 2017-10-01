@@ -8,15 +8,23 @@
 
 import UIKit
 import MapKit
+import Alamofire
+import CoreLocation
 
 
 
 class MapVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var locationManager = CLLocationManager()
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        locationManager.delegate = self
     }
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
@@ -26,5 +34,13 @@ class MapVC: UIViewController {
 }
 
 extension MapVC: MKMapViewDelegate {
+    
+}
+
+extension MapVC: CLLocationManagerDelegate {
+    func configureLocationServices() {
+        
+    }
+    
     
 }
