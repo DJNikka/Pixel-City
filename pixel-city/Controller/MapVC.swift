@@ -13,7 +13,7 @@ import CoreLocation
 
 
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,10 +27,15 @@ class MapVC: UIViewController {
         mapView.delegate = self
         locationManager.delegate = self
         configureLocationServices()
+        addDoubleTap()
     }
     
     func addDoubleTap() {
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dropPin))
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender:)))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTap.delegate = self
+        mapView.addGestureRecognizer(doubleTap)
+        
     }
     
     
@@ -54,7 +59,11 @@ extension MapVC: MKMapViewDelegate {
         
     }
     
-    @objc func dropPin() {
+    @objc func dropPin(sender: UITapGestureRecognizer) {
+        print("Pin was dropped!")
+        let touchPoint = sender.location(in: mapView)
+        print(touchPoint)
+        
         
     }
     
