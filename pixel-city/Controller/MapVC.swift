@@ -59,7 +59,10 @@ extension MapVC: MKMapViewDelegate {
         
     }
     
+    
+    
     @objc func dropPin(sender: UITapGestureRecognizer) {
+        removePin()
         print("Pin was dropped!")
         let touchPoint = sender.location(in: mapView)
         print(touchPoint)
@@ -73,6 +76,12 @@ extension MapVC: MKMapViewDelegate {
         
         
         
+    }
+    
+    func removePin() {
+        for annotation in mapView.annotations {
+            mapView.removeAnnotation(annotation)
+        }
     }
     
 }
