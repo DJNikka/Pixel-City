@@ -16,7 +16,8 @@ import CoreLocation
 class MapVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var mapViewBottomConstraint: MKMapView!
+
+    @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var pullUpView: UIView!
     
     var locationManager = CLLocationManager()
@@ -37,6 +38,12 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         doubleTap.numberOfTapsRequired = 2
         doubleTap.delegate = self
         mapView.addGestureRecognizer(doubleTap)
+        
+    }
+    
+    func animateViewUp() {
+        mapViewBottomConstraint.constant = 300
+        self.view.layoutIfNeeded()
         
     }
     

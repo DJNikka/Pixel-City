@@ -82,6 +82,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="MapViewBottomConstraint" destination="2R5-2Y-6yq" id="j7d-c4-muY"/>
                         <outlet property="mapView" destination="DWs-2c-oOv" id="dmJ-7N-gyR"/>
                         <outlet property="mapViewBottomConstraint" destination="DWs-2c-oOv" id="nO3-sb-6IT"/>
                         <outlet property="pullUpView" destination="3Ck-rp-Eoj" id="axZ-jS-UVp"/>
