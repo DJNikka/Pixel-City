@@ -104,7 +104,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     func removeProgressLbl() {
         
         if progressLbl != nil {
-            progresLbl?.removeFromSuperview()
+            progressLbl?.removeFromSuperview()
         }
         
     }
