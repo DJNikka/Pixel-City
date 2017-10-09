@@ -98,6 +98,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         progressLbl?.font = UIFont(name: "Avenir Next", size: 18)
         progressLbl?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         progressLbl?.textAlignment = .center
+        progressLbl?.text = "12/30 photos loaded"
         pullUpView.addSubview(progressLbl!)
     }
     
@@ -146,13 +147,13 @@ extension MapVC: MKMapViewDelegate {
     
     @objc func dropPin(sender: UITapGestureRecognizer) {
         removePin()
+        removeSpinner()
+        removeProgressLbl()
+        
         animateViewUp()
         addSwipe()
         addSpinner()
-        removeSpinner()
         addProgressLbl()
-        removeProgressLbl()
-        
         
         print("Pin was dropped!")
         let touchPoint = sender.location(in: mapView)
