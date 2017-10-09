@@ -87,6 +87,8 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     func removeSpinner() {
         if spinner != nil {
             spinner?.removeFromSuperview()
+            
+            //only removes if a spinner already exists
     }
 }
     
@@ -130,6 +132,8 @@ extension MapVC: MKMapViewDelegate {
         animateViewUp()
         addSwipe()
         addSpinner()
+        removeSpinner()
+        
         
         print("Pin was dropped!")
         let touchPoint = sender.location(in: mapView)
