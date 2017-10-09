@@ -80,9 +80,15 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
         spinner?.activityIndicatorViewStyle = .whiteLarge
         spinner?.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         spinner?.startAnimating()
-        pullUpView.addSubView(spinner!)
+        pullUpView.addSubview(spinner!)
         
     }
+    
+    func removeSpinner() {
+        if spinner != nil {
+            spinner?.removeFromSuperview()
+    }
+}
     
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
