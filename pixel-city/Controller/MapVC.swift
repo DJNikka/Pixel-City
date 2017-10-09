@@ -92,6 +92,23 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     }
 }
     
+    func addProgressLbl() {
+        progressLbl = UILabel()
+        progressLbl?.frame = CGRect(x: (screenSize.width / 2) - 100, y: 175, width: 200, height: 40)
+        progressLbl?.font = UIFont(name: "Avenir Next", size: 18)
+        progressLbl?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        progressLbl?.textAlignment = .center
+        pullUpView.addSubview(progressLbl!)
+    }
+    
+    func removeProgressLbl() {
+        
+        if progressLbl != nil {
+            progresLbl?.removeFromSuperview()
+        }
+        
+    }
+    
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
         
@@ -133,6 +150,8 @@ extension MapVC: MKMapViewDelegate {
         addSwipe()
         addSpinner()
         removeSpinner()
+        addProgressLbl()
+        removeProgressLbl()
         
         
         print("Pin was dropped!")
