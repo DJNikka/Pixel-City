@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Alamofire
+import AlamofireImage
 import CoreLocation
 
 
@@ -33,6 +34,7 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate {
     var flowLayout = UICollectionViewFlowLayout()
     var collectionView: UICollectionView?
     
+    var imageUrlArray = [String]()
     
     
     
@@ -189,6 +191,13 @@ extension MapVC: MKMapViewDelegate {
         for annotation in mapView.annotations {
             mapView.removeAnnotation(annotation)
         }
+    }
+    
+    func retrieveUrls(forAnnotation annotation: DroppablePin, handler: @escaping (_ status: Bool) -> ()) {
+        imageUrlArray = []
+        
+        
+        
     }
     
 }
