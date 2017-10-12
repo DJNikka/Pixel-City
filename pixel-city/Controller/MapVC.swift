@@ -183,7 +183,9 @@ extension MapVC: MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(touchCoordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
         
-        
+        retrieveUrls(forAnnotation: annotation) { (true) in
+            
+        }
         
     }
     
@@ -195,6 +197,11 @@ extension MapVC: MKMapViewDelegate {
     
     func retrieveUrls(forAnnotation annotation: DroppablePin, handler: @escaping (_ status: Bool) -> ()) {
         imageUrlArray = []
+        
+        Alamofire.request(flickrUrl(forAPIKey: apiKey, withANnotation: annotation, andNumberOfPhotos: 40)).responseJSON { (response) in
+            print(response)
+            handler(true)
+        }
         
         
         
