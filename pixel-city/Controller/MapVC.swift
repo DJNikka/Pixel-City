@@ -208,7 +208,7 @@ extension MapVC: MKMapViewDelegate {
             }
             
             handler(true)
-            
+            print(response)
             
         }
         
