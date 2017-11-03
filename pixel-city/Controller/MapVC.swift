@@ -203,14 +203,7 @@ extension MapVC: MKMapViewDelegate {
             
         }
         
-        func cancelAllSessions() {
-            Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData)
-                sessionDataTask.forEach({ $0.cancel })
-                downloadData.forEach({ $0.cancel() })
-                
-                
-            }
-        }
+ 
         
     }
     
@@ -256,6 +249,15 @@ extension MapVC: MKMapViewDelegate {
         }
         
         
+    }
+    
+    func cancelAllSessions() {
+        Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            sessionDataTask.forEach({ $0.cancel() })
+            downloadData.forEach({ $0.cancel() })
+            
+            
+        }
     }
     
     
