@@ -290,7 +290,7 @@ extension MapVC: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return imageArray.count
         
 }
 
