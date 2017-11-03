@@ -165,6 +165,11 @@ extension MapVC: MKMapViewDelegate {
         removeProgressLbl()
         cancelAllSessions()
         
+        imageUrlArray = []
+        imageArray = []
+        
+        collectionView?.reloadData()
+        
         animateViewUp()
         addSwipe()
         addSpinner()
@@ -213,7 +218,7 @@ extension MapVC: MKMapViewDelegate {
     }
     
     func retrieveUrls(forAnnotation annotation: DroppablePin, handler: @escaping (_ status: Bool) -> ()) {
-        imageUrlArray = []
+       
         
         Alamofire.request(flickrUrl(forAPIKey: apiKey, withANnotation: annotation, andNumberOfPhotos: 40)).responseJSON { (response) in
             guard let json = response.result.value as? Dictionary<String, AnyObject> else { return }
@@ -233,8 +238,7 @@ extension MapVC: MKMapViewDelegate {
     }
     
     func retrieveImages(handler: @escaping (_ status: Bool) -> ()) {
-        imageArray = []
-        
+              
         for url in imageUrlArray {
             Alamofire.request(url).responseImage(completionHandler: { (response) in
                 guard let image = response.result.value else { return }
