@@ -95,6 +95,38 @@
             </objects>
             <point key="canvasLocation" x="116" y="117.39130434782609"/>
         </scene>
+        <!--PopVC-->
+        <scene sceneID="EzE-Iw-lWK">
+            <objects>
+                <viewController id="WL8-Cp-g20" customClass="PopVC" customModule="pixel_city" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lml-WR-1xb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLe-vO-zvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8fW-lf-PKy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwy-dV-SbV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.93611150979995728" green="0.63995528221130371" blue="0.86994129419326782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="pPm-an-XyV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gwy-dV-SbV" firstAttribute="top" secondItem="8fW-lf-PKy" secondAttribute="top" id="dpm-Oi-PNc"/>
+                            <constraint firstItem="gwy-dV-SbV" firstAttribute="leading" secondItem="8fW-lf-PKy" secondAttribute="leading" id="mUM-kK-ctK"/>
+                            <constraint firstAttribute="trailing" secondItem="gwy-dV-SbV" secondAttribute="trailing" id="rfA-XL-QN3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQq-x2-RF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="145"/>
+        </scene>
     </scenes>
     <resources>
         <image name="locationButton" width="67" height="67"/>
